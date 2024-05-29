@@ -4,19 +4,9 @@
 //   email: "user@gmail.com"
 // }
 // Output: "name: User, email: user@gmail.com"
-// statement 3 : To make above problem more complex (property value can be either string or object of same recursive type with any nested objects)
-// Ex Input: {
-//   name: "User",
-//   email: "user@gmail.com",
-//   address: {
-//       city: "Hyderabad",
-//       state: "Telangana"
-//   }
-// }
-// Output: "name: User, email: user@gmail.com, city: Hyderabad, state: Telangana"
-var MyAssignment;
-(function (MyAssignment) {
-    MyAssignment.concatObject = function (obj) {
+var Util;
+(function (Util) {
+    Util.concatObject = function (obj) {
         var keyConcat = Object.keys(obj);
         var concatedObject = "";
         keyConcat.map(function (key) {
@@ -33,7 +23,7 @@ var MyAssignment;
         });
         return concatedObject;
     };
-})(MyAssignment || (MyAssignment = {}));
+})(Util || (Util = {}));
 var object = {
     keerthi: "jangam",
     age: "21",
@@ -42,4 +32,4 @@ var object = {
         dist: "kamareddy",
     },
 };
-console.log(MyAssignment.concatObject(object).slice(0, -2));
+console.log(Util.concatObject(object).slice(0, -2));

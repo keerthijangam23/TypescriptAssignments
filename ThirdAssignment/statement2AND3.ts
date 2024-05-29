@@ -16,11 +16,10 @@
 // }
 // Output: "name: User, email: user@gmail.com, city: Hyderabad, state: Telangana"
 
-namespace MyAssignment {
-  export type objectType = {
-    [key: string]: string | any;
-  };
-
+type objectType = {
+  [key: string]: string | any;
+};
+namespace Util {
   export const concatObject = (obj: objectType): any => {
     const keyConcat = Object.keys(obj);
     let concatedObject: string = "";
@@ -39,7 +38,7 @@ namespace MyAssignment {
   };
 }
 
-const object: MyAssignment.objectType = {
+const object: objectType = {
   keerthi: "jangam",
   age: "21",
   address: {
@@ -48,4 +47,4 @@ const object: MyAssignment.objectType = {
   },
 };
 
-console.log(MyAssignment.concatObject(object).slice(0, -2));
+console.log(Util.concatObject(object).slice(0, -2));
